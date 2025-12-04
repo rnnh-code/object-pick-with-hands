@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand-Tracked 3D Particle System</title>
+    <meta name="description" content="Interactive 3D particle system with hand tracking - pick up objects with your hands!">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas id="canvas3d"></canvas>
+        
+        <div id="status">
+            <div id="status-icon">📷</div>
+            <div id="status-text">Initializing camera...</div>
+        </div>
+        
+        <div id="instructions">
+            <h3>🖐️ Hand Controls</h3>
+            <p><strong>Pinch</strong> (thumb + index) near an object to grab it</p>
+            <p><strong>Move</strong> your hand to drag objects</p>
+            <p><strong>Release</strong> to drop with physics</p>
+        </div>
+        
+        <div id="hand-indicator">
+            <span id="left-hand">🤚 Left</span>
+            <span id="right-hand">🤚 Right</span>
+        </div>
+    </div>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
